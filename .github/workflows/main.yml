@@ -3,7 +3,7 @@ name: Deploy Next.js site to Pages (Dev & Release)
 on:
   push:
     branches:
-      - dev  # Auto-publish to Dev
+      - "dev"  # Auto-publish to Dev
   pull_request:
     types:
       - closed
