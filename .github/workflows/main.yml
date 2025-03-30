@@ -70,20 +70,12 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      - name: Set basePath for deployment
+      - name: Set environment variable
         run: |
           if [ "${{ github.ref }}" == "refs/heads/dev" ]; then
-            echo "module.exports = { basePath: '/dev' };" > next.config.js
+            echo "NEXT_PUBLIC_ENV=dev" >> $GITHUB_ENV
           else
-            echo "module.exports = { basePath: '/release' };" > next.config.js
-          fi
-
-      - name: Set basePath for deployment
-        run: |
-          if [ "${{ github.ref }}" == "refs/heads/dev" ]; then
-            echo "module.exports = { basePath: '/dev' };" > next.config.js
-          else
-            echo "module.exports = { basePath: '/release' };" > next.config.js
+            echo "NEXT_PUBLIC_ENV=release" >> $GITHUB_ENV
           fi
 
       - name: Build with Next.js
