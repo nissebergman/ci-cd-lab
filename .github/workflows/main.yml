@@ -87,11 +87,11 @@ jobs:
 
   # Deployment job
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+    environment:
+      name: github-pages
+      url: ${{ github.ref == 'refs/heads/dev' && format('https://{0}.github.io/ci-cd-lab/dev', github.actor) || format('https://{0}.github.io/ci-cd-lab', github.actor) }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
