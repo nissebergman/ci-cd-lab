@@ -89,7 +89,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }} + "/dev"
+      url: "https://nissebergman.github.io/ci-cd-lab/dev"
     runs-on: ubuntu-latest
     needs: build
     steps:
