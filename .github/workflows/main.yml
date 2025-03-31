@@ -79,10 +79,10 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .next
+          path: "out"
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: .next
+          folder: "out"
           target-folder: "dev" # The folder the action should deploy to.
