@@ -3,5 +3,5 @@ module.exports = {
     output: 'export',
     assetPrefix: '/dev',
     distDir: 'out',
-    assetPrefix: 'dev',
+    assetPrefix: '/dev',
   }
