@@ -81,8 +81,10 @@ jobs:
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
-      - name: Rename output folder to dev
-        run: mv out dev
+      - name: Structure static files for subdirectory deployment
+        run: |
+          mkdir -p dev
+          mv out/* dev/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
