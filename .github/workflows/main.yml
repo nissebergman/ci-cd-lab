@@ -91,4 +91,3 @@ jobs:
         with:
           folder: out
           target-folder: "dev" # The folder the action should deploy to.
-
