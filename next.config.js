@@ -1,5 +1,5 @@
 module.exports = {
     basePath: '/ci-cd-lab/dev',
-    output: 'export'
-    // other configuration options
+    output: 'export',
+    assetPrefix: '/ci-cd-lab/dev/'
   }
