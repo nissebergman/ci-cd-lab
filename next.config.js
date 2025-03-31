@@ -1,7 +1,6 @@
 module.exports = {
-    basePath: '/dev',
+    basePath: '/ci-cd-lab/dev/',
     output: 'export',
-    assetPrefix: '/dev',
     distDir: 'out',
     assetPrefix: '/ci-cd-lab/dev/',
   }
